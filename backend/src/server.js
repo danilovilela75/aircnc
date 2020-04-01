@@ -17,6 +17,10 @@ const app = express();
 const server = http.Server(app);
 const io = socketio(server);
 
+const baseDir = `${__dirname}/htdocs/`;
+
+app.get('/', (req, res) => res.sendFile('index.html', {root: baseDir}));
+
 const connectedUsers = {};
 
 io.on('connection', socket => {
@@ -39,4 +43,4 @@ app.use(express.json());
 app.use('/files', express.static(path.resolve(__dirname,'..','uploads')));
 app.use(routes);
 
-server.listen(port);
+server.listen(port, () => console.log('Servidor on line!'));

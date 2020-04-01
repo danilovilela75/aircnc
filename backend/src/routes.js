@@ -11,10 +11,6 @@ const BookingController = require('./controllers/BookingController');
 const routes = Router();
 const upload = multer(uploadConfig);
 
-routes.get('/', (req, res) => {
-    return res.json({ server_status: "Servidor Iniciado..." });
-});
-
 routes.post('/sessions', SessionController.store);
 routes.get('/sessions', SessionController.show);
 
