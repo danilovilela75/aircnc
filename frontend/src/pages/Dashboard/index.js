@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
+import socketio from 'socket.io-client';
 
 import './styles.css';
 
 export default function Dashboard() {
 
     const [spots, setSpots] = useState([]);
+    
 
     useEffect(() => {
 
@@ -15,10 +17,9 @@ export default function Dashboard() {
             const user_id = localStorage.getItem('user');
 
             const response = await api.get('/dashboard', {
-                headers: {user_id}
+                headers: { user_id },
             });
-
-            console.log(response.data);
+            
             setSpots(response.data);
 
         }

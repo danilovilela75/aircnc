@@ -22,7 +22,6 @@ module.exports = {
             techs: techs.split(',').map(tech => tech.trim()),
         });
 
-        console.log(spot);
         return res.json(spot);
 
     },
@@ -33,7 +32,6 @@ module.exports = {
 
         const spot = await Spot.find({ techs: tech });
 
-        console.log(spot);
         return res.json(spot);
 
     },

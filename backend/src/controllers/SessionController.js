@@ -10,8 +10,6 @@ module.exports = {
         if(!user) {
             user = await User.create({ email });
         }
-
-        console.log(user);
         return res.json(user);
 
     },
@@ -20,7 +18,6 @@ module.exports = {
 
         const user = await User.find();
 
-        console.log(user);
         return res.json(user);
 
     },
