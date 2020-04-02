@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Danilo Vilela <danilovilela@teleset.com.br>",
   "license": "MIT",
+  "homepage": "http://srvteleset.ddns.net:8000/html",
   "scripts": {
     "start": "nodemon src/server.js"
   },
